@@ -1,6 +1,5 @@
 const USER_PER_PAGE = 20;
 const URL = "https://api.github.com/";
-// https://api.github.com/search/users?q=${searchValue}&per_page=${USER_PER_PAGE}&page=${page}
 
 export class API {
   constructor() {
@@ -35,11 +34,26 @@ export class API {
       const response = await fetch(
         `${URL}search/users?q=${searchValue}&sort=${sortParam}&order=${orderParam}&per_page=${userPerPage}&page=${page2}`
       );
-      this.showLoader(false);
-      console.log(response);
-      return response;
+      if (response.ok) {
+        console.log(response);
+        this.showLoader(false);
+        console.log(response);
+        return response;
+      } else {
+        console.log(response);
+      }
     } catch (e) {
-      alert(e);
+      this.showLoader(false);
+      let errorContainer = document.getElementById("error-container");
+      errorContainer.classList.remove("hidden");
+      let errorMessage = document.querySelector(".error-message");
+      let errorButton = document.querySelector(".error-button");
+      errorButton.addEventListener("click", () => {
+        errorContainer.classList.add("hidden");
+      });
+
+      errorMessage.textContent = e;
+      console.log(e);
     }
   }
 

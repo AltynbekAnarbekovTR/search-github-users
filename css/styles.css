@@ -29,7 +29,6 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 50%; */
     margin: 0 auto;
     
 }
@@ -44,9 +43,6 @@ h3 {
 }
 .users-wrapper {
     padding: 0;
-   
-    /* width: 50%; */
-    /* margin: 0 auto; */
 }
 
 .users {
@@ -63,11 +59,7 @@ h3 {
     position: relative;
     border-radius: 5px;
     margin-top: 10px;
-    /* padding-left: 100px; */
     padding: 15px;
-    /* width: 50%; */
-    /* padding-left: 0px; */
-    /* margin-left: 30px; */
     background-color: #fff;
 }
 
@@ -78,14 +70,8 @@ h3 {
 .user-prev {
     align-items: center;
     display: flex;
-    /* flex-direction: column; */
     gap: 20px;
     align-items: center;
-    /* box-shadow: 1px 1px 1px rgb(172, 172, 172); */
-    /* -moz-box-shadow: 0 0 3px #ccc;
--webkit-box-shadow: 0 0 3px #ccc;
-box-shadow: 0 0 3px #ccc; */
-/* border: 2px solid grey; */
 background-color: #fff;
 border-radius: 5px;
     justify-content: space-between;
@@ -95,9 +81,6 @@ border-radius: 5px;
     padding: 0;
     text-align: center;
     width: 50vw;
-    /* width: calc(100% / 5 - 20px); */
-    /* width: 80px; */
-    /* transition: all 0.5s ease-in-out; */
 }
 
 .user-prev-photo {
@@ -105,8 +88,6 @@ border-radius: 5px;
     padding-bottom: 10px;
     padding-left: 10px;
     max-height: 100px;
-    /* max-width: 100%; */
-    /* margin-bottom: 10px; */
 }
 
 .user-prev-name { 
@@ -148,11 +129,10 @@ border-radius: 5px;
 }
 
 .fav {
-    /* width: 5px;
-    margin-top: -25px;
-    padding-top: 5px; */
     padding-right: 30px;
-    /* transition: all 0.5s ease-in-out; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -179,14 +159,8 @@ border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* max-width: 50vw; */
-    /* max-width: 30%; */
     background-color: #fff;
     margin-bottom: 30px;
-    /* box-shadow: 1px 1px 5px rgb(39, 39, 39); */
-    /* margin-right: 300px; */
-
-    
 }
 .fav-item__right {
     display: flex;
@@ -194,18 +168,13 @@ border-radius: 5px;
     justify-content: space-between;
     align-items: flex-end;
     gap: 30px;
-    /* display: inline-block;
-    height: auto; */
     text-align: right;
 }
 
 .fav-item__middle {
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     padding-left: 10px;
-    /* max-width: 50vw; */
     color: black;
     text-align: center;
 }
@@ -224,13 +193,6 @@ margin-bottom: 40px;
     width: 100px;
 }
 
-.fav-user-btn {
-    /* margin-bottom: 10px; */
-    /* max-height: 40px; */
-    /* margin-top: 20px; */
-    /* margin-right: 10px; */
-}
-
 .fav-user-btn svg:hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -242,21 +204,9 @@ margin-bottom: 40px;
     width: 30px;
 }
 
-/* .fav-user-btn svg:hover {
-    scale: 2;
-} */
-
 .repos-container {
-    /* position: absolute;
-    top: 0;
-    right: 0; */
-    /* position: sticky; */
-    /* right: 0%; */
-    /* margin-right: 50px; */
     margin-left: 0px;
     padding-left: 0px;
-    /* margin-top: 100px; */
-    /* margin-right: 200px; */
 }
 
 .fav-user-repos {
@@ -270,30 +220,16 @@ margin-bottom: 40px;
     padding: 0;
 }
 
-.no-nav {
-    /* display: flex; */
-    /* gap: 100px; */
-    /* margin-top: 100px; */
-    /* justify-content: space-evenly; */
-}
-
 .favorites {
     display: flex;
     justify-content: center;
-    /* gap: 40px; */
     padding-left: 5px;
     padding-right: 5px;
-    /* width: 100%;
-    max-width: 700px; */
-    /* width: 500px; */
     margin: 0 auto;
     margin-top: 50px;
 }
 
 .nav-btn-search {
-    /* position: absolute;
-    left: 100px;
-    top: 40px; */
     font-size: 20px;
     border: none;
     padding: 5px 5px;
@@ -306,19 +242,12 @@ margin-bottom: 40px;
 }
 
 .nav-btn-search:hover {
-    /* background-color: black;
-    color: white;
-    cursor: pointer; */
     background-color: rgb(57, 148, 252);
     cursor: pointer; 
     transform: scale(1.1);
 }
 
 .nav-btn-favorites {
-    /* position: absolute;
-    left: 200px;
-    top: 40px; */
-    /* border: 3px solid rgb(253, 0, 0); */
     font-size: 20px;
     border: none;
     padding: 5px 5px;
@@ -331,8 +260,6 @@ margin-bottom: 40px;
 }
 
 .nav-btn-favorites:hover {
-    /* background-color: black;
-    color: white;*/
     background-color: rgb(57, 148, 252);
     cursor: pointer; 
     transform: scale(1.1);
@@ -358,7 +285,6 @@ margin-bottom: 40px;
 .order {
     max-width: 100px;
     margin-right: 10px;
-    /* position: absolute; */
 }
 
 .order:hover {
@@ -368,7 +294,6 @@ margin-bottom: 40px;
 .order-label {
     font-weight: bold;
     margin-right: 5px;
-    /* position: absolute; */
 }
 
 .numbOfCards-label {
@@ -384,14 +309,11 @@ margin-bottom: 40px;
 }
 
 .btn-next {
-    /* float: left; */
-    /* margin-right: 30px; */
     margin-bottom: 30px;
     margin-left: 10px;
 
     border: none;
     padding: 5px 15px;
-    /* width: 120px; */
     text-align: center;
     background-color: rgb(0, 117, 252);
     color: white;
@@ -400,26 +322,15 @@ margin-bottom: 40px;
 }
 
 .btn-next:hover {
-    /* background-color: black;
-    color: white;*/
     background-color: rgb(57, 148, 252);
     cursor: pointer; 
     transform: scale(1.1);
 }
 
-.btn-next-far {
-    /* margin-right: 700px; */
-}
-
-/* .page-input {
-    float: left;
-}
-*/
 .btn-prev {
     margin-right: 10px;
     border: none;
     padding: 5px 15px;
-    /* width: 120px; */
     text-align: center;
     background-color: rgb(0, 117, 252);
     color: white;
@@ -428,32 +339,20 @@ margin-bottom: 40px;
 }
 
 .btn-prev:hover {
-    /* background-color: black;
-    color: white;*/
     background-color: rgb(57, 148, 252);
     cursor: pointer; 
     transform: scale(1.1);
-}
-
-/* .btn-prev-far {
-    margin-left: 300px;
-}  */
-
-.search {
 }
 
 .pages-block {
     width: 200px;
     margin: 0 auto;
     margin-top: 50px;
-    /* max-width: 400px;
-    transform: translateX(35%); */
 }
 
 
 
 .user img {
-    /* margin-top: 50px; */
     max-width: 100px;
 }
 
@@ -503,9 +402,7 @@ margin-bottom: 40px;
     color: white;
 }
 
-.hidden {
-    display: none;
-}
+
 
 .user-list {
     word-wrap: break-word;
@@ -531,7 +428,6 @@ margin-bottom: 40px;
 .show-repos-btn {
     border: none;
     padding: 5px 5px;
-    /* width: 120px; */
     text-align: center;
     background-color: rgb(0, 117, 252);
     color: white;
@@ -554,7 +450,6 @@ margin-bottom: 40px;
 }
 
 .close-button img{
-    /* padding: 10px; */
     max-width: 15px;
     max-height: 15px;
 }
@@ -569,11 +464,44 @@ margin-bottom: 40px;
     cursor: pointer;
 }
 
-@media(max-width: 1024px) {
-    .search-block {
-        /* margin-top: 50px; */
-    }
+.error-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 50;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(150, 150, 150, 0.5);
 }
+
+.error-box {
+    text-align: center;
+    width: 50vw;
+    background-color: rgb(104, 104, 104);
+    color: white
+}
+
+.error-message {
+    font-size: 24px;
+    padding: 50px 30px;
+}
+
+.error-button {
+    width: 100%;
+    height: 50px
+}
+
+.error-button:hover {
+   cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+@media(max-width: 1024px) {
 
 @media(max-width: 768px) {
     .fav-item {
@@ -632,14 +560,7 @@ margin-bottom: 40px;
 }
 
 @media(max-width: 560px) {
-    .repos-container {
-        /* max-width: 200px; */
-        /* width: 30%; */
-    }
 
-    .fav-user-btn {
-        /* font-size: 14px; */
-    }
 
     .user-list-link {
         font-size: 14px;
@@ -648,45 +569,10 @@ margin-bottom: 40px;
     .fav-items-container {
         margin-right: 10px;
     }
-
-    /* .fav-item {
-        padding: 10px;
-        width: 100px;
-    }
-
-    .fav-user-img {
-        width: 80px
-    }
-
-    .fav-item__middle a {
-        font-size: 12px;
-    }
-
-    .fav-user-btn {
-        max-height: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    } */
-
-    /* .fav-item__middle {
-        padding: 0;
-    }
-
-    .fav-user-btn {
-        margin: 0px;    
-    } */
-
-    /* .favorites {
-        max-width: 300px;
-        padding: 0;
-    } */
-
     .user-prev {
         flex-direction: column;
         gap: 0px;
-        max-height: 200px;
+        /* max-height: 200px; */
         width: 30vw;
         word-break: break-all;
     }
@@ -773,3 +659,4 @@ margin-bottom: 40px;
 
 
 
+}

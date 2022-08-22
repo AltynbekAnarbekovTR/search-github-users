@@ -102,7 +102,6 @@ export class Search {
           this.view.numbOfCards.placeholder =
             "Please input a number between 1 and 100";
           console.log(this.view.numbOfCards.value);
-          // ("Please input a number between 1 and 100");
         }
       }, 1000)
     );
@@ -110,7 +109,6 @@ export class Search {
 
     //Pagination start
     this.view.btnNext2.addEventListener("click", () => {
-      // this.view.pageNumber2.value = this.currentPage;
       if (this.view.searchInput.value) {
         this.loadMoreUsers();
       } else {
@@ -222,34 +220,7 @@ export class Search {
         )
         .then((response) => {
           //Pagination start
-          // const link = response.headers.get("link");
-          // const links = link.split(",");
-          // console.log(links);
-          // const urls = links.map((a) => {
-          //   return {
-          //     url: a.split(";")[0].replace(">", "").replace("<", ""),
-          //     title: a.split(";")[1],
-          //   };
-          // });
-          // console.log(urls);
 
-          // urls.forEach((u) => {
-          //   const btn = document.createElement("button");
-          //   btn.textContent = u.title;
-          //   console.log(u.url);
-          //   btn.addEventListener("click", (e) =>
-          //     this.api
-          //       .loadUsers(
-          //         this.view.searchInput.value,
-          //         this.currentPageNumber,
-          //         this.view.selectSort.value,
-          //         this.view.selectOrder.value
-          //       )
-          //       .then(this.updateUsers(response))
-          //   );
-          //   console.log(btn);
-          //   this.view.usersListWrapper.appendChild(btn);
-          // });
           //Pagination end
           this.updateUsers(response);
         });
@@ -261,20 +232,6 @@ export class Search {
       });
     }
   }
-
-  // Подгружаем пользователей при нажатии на кнопку "Загрузить еще"
-  // loadMoreUsers() {
-  //   this.view.clearUsers();
-  //   this.setCurrentPageValue(Number(this.currentPage) + 1);
-  //   this.api
-  //     .loadUsers(
-  //       this.view.searchInput.value,
-  //       this.currentPageNumber,
-  //       this.view.selectSort.value,
-  //       this.view.selectOrder.value // Параметр сортировки
-  //     )
-  //     .then((response) => this.updateUsers(response, true));
-  // }
 
   //Скопировал loadMoreUsers,чтобы сделать панигацию (Единственное изменение - добавление clearUsers в начале)
   loadMoreUsers() {
@@ -309,28 +266,25 @@ export class Search {
   updateUsers(response, isUpdate = false) {
     let users;
     let usersCount;
-    if (response.ok) {
-      if (!isUpdate) {
-        // Если новый поиск а не подгрузка, то очищаем ранее найденных пользователей
+    // if (response.ok) {
+    if (!isUpdate) {
+      // Если новый поиск а не подгрузка, то очищаем ранее найденных пользователей
+      this.view.clearUsers();
+    }
+    response.json().then((res) => {
+      if (res.items) {
+        users = res.items;
+        usersCount = res.total_count;
+        this.view.toggleStateLoadMoreButton(
+          usersCount > 10 &&
+            users.length * this.currentPageNumber !== usersCount
+        );
+        users.forEach((user) => this.view.createUser(user));
+      } else {
         this.view.clearUsers();
       }
-      response.json().then((res) => {
-        if (res.items) {
-          users = res.items;
-          usersCount = res.total_count;
-          this.view.toggleStateLoadMoreButton(
-            usersCount > 10 &&
-              users.length * this.currentPageNumber !== usersCount
-          );
-          users.forEach((user) => this.view.createUser(user));
-        } else {
-          this.view.clearUsers();
-        }
-        this.view.setUserCounter(this.log.counterMessage(usersCount));
-      });
-    } else {
-      console.log("Error 1" + response.status);
-    }
+      this.view.setUserCounter(this.log.counterMessage(usersCount));
+    });
   }
 
   //Preloader function
@@ -351,11 +305,6 @@ export class Search {
       if (callNow) func.apply(context, args);
     };
   }
-
-  // nextPage() {
-  //   console.log(next);
-  //   return next;
-  // }
   loadNextPage() {
     if (this.maxPage === this.currentPage) {
       this.currentPage = this.maxPage;
@@ -437,18 +386,12 @@ export class Search {
       </g>
       </svg>`;
       favUserFavBtn.classList.add("active");
-      // let deleted = false;
       let deleted = true;
       favUserFavBtn.addEventListener("click", (e) => {
         this.view.showReposContainer.innerHTML = "";
         console.log("Hello");
         console.log(favUserFavBtn);
         favUserFavBtn.classList.toggle("active");
-        // deleted = !deleted;
-        //Удаление при нажатии
-        // if (localStorage.getItem("data") == null) {
-        //   localStorage.setItem("data", "[]");
-        // }
         console.log(user);
         var old_data = JSON.parse(localStorage.getItem("data"));
         console.log(old_data);
@@ -465,14 +408,6 @@ export class Search {
           localStorage.setItem("data", JSON.stringify(old_data));
           this.loadFavorites();
         }
-
-        // if (!deleted) {
-        //   old_data.push(user);
-        //   localStorage.setItem("data", JSON.stringify(old_data));
-        // }
-
-        // selectedItem = localStorage.get
-        // let favData = JSON.parse(localStorage.getItem("data"));
       });
 
       this.favUserShowRepos = this.view.createElement(
@@ -489,23 +424,13 @@ export class Search {
           console.log(data);
           const [repos] = data;
           const reposHTML = this.getUserListHTMLFav(repos, "Repos");
-          // console.log(reposHTML);
           this.view.showReposContainer.innerHTML = reposHTML;
           console.log(this.view.showReposContainer);
           this.view.favBlock.appendChild(this.view.showReposContainer);
         });
-        // let response = fetch(user.repos).then((res) =>
-        //   res.json().then((res) => res))
-        // const res1 = await fetch(user.repos);
-        // const res2 = await response.json();
-        // console.log(res2)
-
-        // console.log(response);
       });
 
       this.favUserReposBlock = this.view.createElement("div");
-      // let repos = fetch(user.repos).then((res) => res.json());
-      // console.log(repos);
       this.favUserReposBlock.innerHTML = user.repos;
 
       this.favItemLeft.append(this.favUserAvatar);
@@ -520,11 +445,6 @@ export class Search {
       this.view.favItemsContainer.append(this.favItem);
       this.view.favBlock.append(this.view.favItemsContainer);
     });
-    // this.view.favBlock.innerHTML = "";
-    // this.view.favBlock.append(this.view.favContainer);
-
-    // var favData = JSON.parse(localStorage.getItem("data"));
-    // console.log(favData);
   }
   getUserListHTMLFav(data, title) {
     return data.length
