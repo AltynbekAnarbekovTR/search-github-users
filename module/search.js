@@ -190,7 +190,7 @@ export class Search {
     );
 
     this.view.searchLink.addEventListener("click", () => {
-      window.history.pushState("", "", "/favorites");
+      window.history.pushState("", "", "/search");
       this.view.app.classList.remove("hidden");
       this.view.favBlock.classList.add("hidden");
       this.view.showReposContainer.classList.add("hidden");
