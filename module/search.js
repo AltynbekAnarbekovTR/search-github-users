@@ -176,11 +176,12 @@ export class Search {
     this.loadFavorites.bind(this);
     //Favourites
     this.view.favLink.addEventListener("click", () => {
+      window.history.pushState("", "", "/favorites");
       this.view.app.classList.add("hidden");
       this.view.favBlock.classList.remove("hidden");
       this.loadFavorites();
       this.view.showReposContainer.innerHTML = "";
-      window.history.pushState("", "", "/newpage");
+
       // this.view.showReposContainer.classList.remove("hidden");
     });
     this.view.showReposContainer = this.view.createElement(
@@ -189,6 +190,7 @@ export class Search {
     );
 
     this.view.searchLink.addEventListener("click", () => {
+      window.history.pushState("", "", "/favorites");
       this.view.app.classList.remove("hidden");
       this.view.favBlock.classList.add("hidden");
       this.view.showReposContainer.classList.add("hidden");
