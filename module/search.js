@@ -180,6 +180,7 @@ export class Search {
       this.view.favBlock.classList.remove("hidden");
       this.loadFavorites();
       this.view.showReposContainer.innerHTML = "";
+      window.history.pushState("", "", "/newpage");
       // this.view.showReposContainer.classList.remove("hidden");
     });
     this.view.showReposContainer = this.view.createElement(
