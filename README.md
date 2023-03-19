@@ -1,4 +1,6 @@
-Github Search API
+#Github Search API
+
+A web application to search Github users. When selecting a user his repositories and followers are displayed. Also you can add users to favorites. Favorites are saved in local storage
 
 1. The project will not work if you simply try opening it through index.html file. To make the project work you need to run it using a server.
 Popular choices include:
