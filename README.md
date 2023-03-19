@@ -1,5 +1,7 @@
 #Github Search API
 
+<img src="https://user-images.githubusercontent.com/62358513/226198232-1effcfa5-d7d0-427f-bb7c-bf103d574f73.JPG" style="max-width: 200px; height: 200px;">
+
 A web application to search Github users. The application uses Github API. You can apply some filters for search. When selecting a user his repositories and followers are displayed. Also you can add users to favorites. Favorites are saved in local storage
 
 1. The project will not work if you simply try opening it through index.html file. To make the project work you need to run it using a server.
