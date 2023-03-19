@@ -1,4 +1,4 @@
-#Github Search API
+# Github Search API
 
 <img src="https://user-images.githubusercontent.com/62358513/226198232-1effcfa5-d7d0-427f-bb7c-bf103d574f73.JPG" style="max-width: 200px; height: 200px;">
 
